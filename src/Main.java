@@ -53,6 +53,12 @@ class Scorpio extends Entity{
     public void death() {
         System.out.println("Scorpio is dead.");
     }
+    public int getHealthPoints(){
+        return healthPoints;
+    }
+    public String getName(){
+        return name;
+    }
 }
 
 class Subzero extends Entity{
@@ -93,6 +99,9 @@ class Subzero extends Entity{
     public String getName(){
         return "Subzero";
     }
+    public int getHealthPoints(){
+        return healthPoints;
+    }
 }
 
 class JonnyCage extends Entity{
@@ -131,7 +140,10 @@ class JonnyCage extends Entity{
         System.out.println("Jonny Cage is dead.");
     }
     public String getName(){
-        return "Jonny Cage";
+        return name;
+    }
+    public int getHealthPoints(){
+        return healthPoints;
     }
 }
 
@@ -170,6 +182,12 @@ class KhabibNurmagomedov extends Entity{
     public void death() {
         System.out.println("Khabib Nurmagomedov is dead.");
     }
+    public int getHealthPoints(){
+        return healthPoints;
+    }
+    public String getName(){
+        return name;
+    }
 }
 
 class Game {
@@ -177,17 +195,20 @@ class Game {
     static private Random rand = new Random();
 
     public static boolean start(){
-        System.out.println("Press:\nAny number: To start\n0: To exit\nYour choice: ");
+        System.out.println("      FIGHTER GAME\n________________________\n         Press:\nAny number)    To start\n         0)    To exit\n________________________\n      Your choice: ");
         switch (input.nextInt()){
             case 0 -> {
                 return false;
             }
-            default -> choosingCharacters();
+            default -> {
+                System.out.println("________________________");
+                choosingCharacters();
+            }
         }
         return true;
     }
     public static void choosingCharacters(){
-        System.out.println("Choose your fighter:\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero         |    4)Khabib Nurmagomedov");
+        System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
         Entity playerEntity;
         switch(input.nextInt()){
             case 1 -> playerEntity = new Scorpio();
@@ -209,9 +230,9 @@ class Game {
         fight(playerEntity, machineEntity);
     }
     public static void fight(Entity playerEntity, Entity machineEntity){
-        System.out.println("!!! FIGHT !!!");
+        System.out.println("________________________\n        !!! FIGHT !!!\n________________________\n" + playerEntity.getName() + " VS " + machineEntity.getName());
         while(playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0){
-            System.out.println("Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
+            System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
             switch (input.nextInt()){
                 case 1 -> {
                     machineEntity.getDamage(playerEntity.headKick());
@@ -237,11 +258,11 @@ class Game {
                 }
                 case 2 -> {
                     playerEntity.getDamage(machineEntity.handKick());
-                    System.out.println("You used hand punch");
+                    System.out.println("Enemy used hand punch");
                 }
                 case 3 -> {
                     playerEntity.getDamage(machineEntity.legKick());
-                    System.out.println("You used leg kick");
+                    System.out.println("Enemy used leg kick");
                 }
                 default -> {
                     playerEntity.getDamage(machineEntity.headKick());
