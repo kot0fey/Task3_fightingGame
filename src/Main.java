@@ -1,22 +1,22 @@
         import java.util.Random;
 import  java.util.Scanner;
 interface Actions{
-    public int headKick();
-    public int handKick();
-    public int legKick();
+    int headKick();
+    int handKick();
+    int legKick();
 }
 abstract class Entity implements Actions{
     protected int healthPoints;
     protected int power;
     protected String name;
-    void getDamage(int damage){};
-    void death(){};
+    void getDamage(int damage){}
+    void death(){}
     int getHealthPoints(){
         return healthPoints;
     }
     String getName(){
         return name;
-    };
+    }
     }
 
 class Scorpio extends Entity{
@@ -191,19 +191,16 @@ class KhabibNurmagomedov extends Entity{
 }
 
 class Game {
-    static private Scanner input = new Scanner(System.in);
-    static private Random rand = new Random();
+    static private final Scanner input = new Scanner(System.in);
+    static private final Random rand = new Random();
 
     public static boolean start(){
         System.out.println("      FIGHTER GAME\n________________________\n         Press:\nAny number)    To start\n         0)    To exit\n________________________\n      Your choice: ");
-        switch (input.nextInt()){
-            case 0 -> {
+        if (input.nextInt() == 0){
                 return false;
-            }
-            default -> {
+            } else {
                 System.out.println("________________________");
                 choosingCharacters();
-            }
         }
         return true;
     }
@@ -211,7 +208,6 @@ class Game {
         System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
         Entity playerEntity;
         switch(input.nextInt()){
-            case 1 -> playerEntity = new Scorpio();
             case 2 -> playerEntity = new Subzero();
             case 3 -> playerEntity = new JonnyCage();
             case 4 -> playerEntity = new KhabibNurmagomedov();
@@ -220,7 +216,6 @@ class Game {
         }
         Entity machineEntity;
         switch(rand.nextInt(1, 4)){
-            case 1 -> machineEntity = new Scorpio();
             case 2 -> machineEntity = new Subzero();
             case 3 -> machineEntity = new JonnyCage();
             case 4 -> machineEntity = new KhabibNurmagomedov();
@@ -234,10 +229,6 @@ class Game {
         while(playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0){
             System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
             switch (input.nextInt()){
-                case 1 -> {
-                    machineEntity.getDamage(playerEntity.headKick());
-                    System.out.println("You used head punch");
-                }
                 case 2 -> {
                     machineEntity.getDamage(playerEntity.handKick());
                     System.out.println("You used hand punch");
@@ -252,10 +243,6 @@ class Game {
                 }
             }
             switch (rand.nextInt(1, 3)){
-                case 1 -> {
-                    playerEntity.getDamage(machineEntity.headKick());
-                    System.out.println("Enemy used head punch");
-                }
                 case 2 -> {
                     playerEntity.getDamage(machineEntity.handKick());
                     System.out.println("Enemy used hand punch");
@@ -285,10 +272,8 @@ class Game {
     }
     public static boolean rematchRequest(){
         System.out.println("Do you want to restart?\n1)Yes  |   2)No (default)");
-        switch (input.nextInt()){
-            case 1 -> {
-                return true;
-            }
+        if (input.nextInt() == 1) {
+            return true;
         }
         return false;
     }
