@@ -17,7 +17,7 @@ public class Game {
         }
         return true;
     }
-    public static void choosingCharacters(){
+    private static void choosingCharacters(){
         System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
         Entity playerEntity;
         switch(input.nextInt()){
@@ -37,7 +37,7 @@ public class Game {
 
         fight(playerEntity, machineEntity);
     }
-    public static void fight(Entity playerEntity, Entity machineEntity){
+    private static void fight(Entity playerEntity, Entity machineEntity){
         System.out.println("________________________\n        !!! FIGHT !!!\n________________________\n" + playerEntity.getName() + " VS " + machineEntity.getName());
         while(playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0){
             System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
@@ -77,11 +77,11 @@ public class Game {
             win(machineEntity);
         }
     }
-    public static void win(Entity machineEntity){
+    private static void win(Entity machineEntity){
         machineEntity.death();
         System.out.println("!!! YOU WON !!!");
     }
-    public static void loose(Entity playerEntity){
+    private static void loose(Entity playerEntity){
         playerEntity.death();
         System.out.println("!!! YOU LOST !!!");
     }

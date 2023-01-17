@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="4.1 feat.: Added usage of death() method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Actions.java" afterDir="false" />
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="2 feat.: Huge update. All methods are in Entity now">
       <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Scorpio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Scorpio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Subzero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673968576318</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2 feat.: Huge update. All methods are in Entity now">
+      <created>1673973916644</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673973916644</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2 feat.: Huge update. All methods are in Entity now">
+      <created>1673973972555</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673973972555</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -108,6 +116,7 @@
     <MESSAGE value="Final update" />
     <MESSAGE value="4 feat.: com.task3.Entity: void death() =&gt; abstract void death" />
     <MESSAGE value="4.1 feat.: Added usage of death() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.1 feat.: Added usage of death() method" />
+    <MESSAGE value="2 feat.: Huge update. All methods are in Entity now" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 feat.: Huge update. All methods are in Entity now" />
   </component>
 </project>
