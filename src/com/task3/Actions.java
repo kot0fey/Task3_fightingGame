@@ -1,7 +1,9 @@
 package com.task3;
 
+import java.util.Random;
+
 interface Actions{
-    int headKick();
-    int handKick();
-    int legKick();
+    int headKick(Random rand);
+    int handKick(Random rand);
+    int legKick(Random rand);
 }

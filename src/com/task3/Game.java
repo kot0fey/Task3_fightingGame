@@ -43,29 +43,29 @@ public class Game {
             System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
             switch (input.nextInt()){
                 case 2 -> {
-                    machineEntity.getDamage(playerEntity.handKick());
+                    machineEntity.getDamage(playerEntity.handKick(rand));
                     System.out.println("You used hand punch");
                 }
                 case 3 -> {
-                    machineEntity.getDamage(playerEntity.legKick());
+                    machineEntity.getDamage(playerEntity.legKick(rand));
                     System.out.println("You used leg kick");
                 }
                 default -> {
-                    machineEntity.getDamage(playerEntity.headKick());
+                    machineEntity.getDamage(playerEntity.headKick( rand));
                     System.out.println("You used head punch");
                 }
             }
             switch (rand.nextInt(1, 3)){
                 case 2 -> {
-                    playerEntity.getDamage(machineEntity.handKick());
+                    playerEntity.getDamage(machineEntity.handKick(rand));
                     System.out.println("Enemy used hand punch");
                 }
                 case 3 -> {
-                    playerEntity.getDamage(machineEntity.legKick());
+                    playerEntity.getDamage(machineEntity.legKick(rand));
                     System.out.println("Enemy used leg kick");
                 }
                 default -> {
-                    playerEntity.getDamage(machineEntity.headKick());
+                    playerEntity.getDamage(machineEntity.headKick(rand));
                     System.out.println("Enemy used head punch");
                 }
             }
