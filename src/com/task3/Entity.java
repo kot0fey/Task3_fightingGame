@@ -4,8 +4,8 @@ import java.util.Random;
 
 abstract class Entity implements Actions {
     private int healthPoints;
-    private int power;
-    private String name;
+    private final int power;
+    private final String name;
     public Entity(int healthPoints, int power, String name){
         this.healthPoints = healthPoints;
         this.power = power;
