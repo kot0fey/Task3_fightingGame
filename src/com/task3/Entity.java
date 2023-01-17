@@ -7,7 +7,7 @@ abstract class Entity implements Actions {
     protected int power;
     protected String name;
     void getDamage(int damage){}
-    void death(){}
+    abstract void death();
     int getHealthPoints(){
         return healthPoints;
     }
