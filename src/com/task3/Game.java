@@ -19,21 +19,18 @@ public class Game {
     }
     private static void choosingCharacters(){
         System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
+        Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
         Entity playerEntity;
-        switch(input.nextInt()){
-            case 2 -> playerEntity = new Subzero();
-            case 3 -> playerEntity = new JonnyCage();
-            case 4 -> playerEntity = new KhabibNurmagomedov();
-            default -> playerEntity = new Scorpio();
+        int characterArrayIndex = input.nextInt();
+        if (characterArrayIndex > 0 && characterArrayIndex < 5){
+            playerEntity = characterArray[characterArrayIndex - 1];
+        } else {
+            playerEntity = characterArray[0];
+        }
 
-        }
         Entity machineEntity;
-        switch(rand.nextInt(1, 4)){
-            case 2 -> machineEntity = new Subzero();
-            case 3 -> machineEntity = new JonnyCage();
-            case 4 -> machineEntity = new KhabibNurmagomedov();
-            default -> machineEntity = new Scorpio();
-        }
+        int randArrayIndex = rand.nextInt(0, 4);
+            machineEntity = characterArray[randArrayIndex];
 
         fight(playerEntity, machineEntity);
     }
@@ -71,7 +68,7 @@ public class Game {
             }
             System.out.println("Your HP is: " + playerEntity.getHealthPoints() + "\nEnemy's HP is: " + machineEntity.getHealthPoints());
         }
-        if (playerEntity.getHealthPoints() < 0){
+        if (playerEntity.getHealthPoints() <= 0){
             loose(playerEntity);
         } else {
             win(machineEntity);
