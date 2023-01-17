@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fighting fixed. Interface update" />
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Final update">
+      <change afterPath="$PROJECT_DIR$/src/com/task3/Actions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/Scorpio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/Subzero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -17,7 +35,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KM36LI2O4BhwxVR8Yl1QqnZtDe" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,13 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673799833903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Final update">
+      <created>1673799919693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673799919693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fight if not working" />
     <MESSAGE value="Fight is not working" />
     <MESSAGE value="Fighting fixed. Interface update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fighting fixed. Interface update" />
+    <MESSAGE value="Final update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final update" />
   </component>
 </project>
