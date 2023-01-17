@@ -1,7 +1,5 @@
 package com.task3;
 
-import com.task3.Entity;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -74,15 +72,17 @@ public class Game {
             System.out.println("Your HP is: " + playerEntity.getHealthPoints() + "\nEnemy's HP is: " + machineEntity.getHealthPoints());
         }
         if (playerEntity.getHealthPoints() < 0){
-            loose();
+            loose(playerEntity);
         } else {
-            win();
+            win(machineEntity);
         }
     }
-    public static void win(){
+    public static void win(Entity machineEntity){
+        machineEntity.death();
         System.out.println("!!! YOU WON !!!");
     }
-    public static void loose(){
+    public static void loose(Entity playerEntity){
+        playerEntity.death();
         System.out.println("!!! YOU LOST !!!");
     }
     public static boolean rematchRequest(){
