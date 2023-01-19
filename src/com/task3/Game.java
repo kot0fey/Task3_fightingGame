@@ -22,14 +22,14 @@ public class Game {
         Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
         Entity playerEntity;
         int characterArrayIndex = input.nextInt();
-        if (characterArrayIndex > 0 && characterArrayIndex < 5){
-            playerEntity = characterArray[characterArrayIndex - 1];
+        if (characterArrayIndex > 0 && characterArrayIndex < characterArray.length - 1){
+            playerEntity = characterArray[characterArrayIndex];
         } else {
             playerEntity = characterArray[0];
         }
 
         Entity machineEntity;
-        int randArrayIndex = rand.nextInt(0, 4);
+        int randArrayIndex = rand.nextInt(0, characterArray.length - 1);
             machineEntity = characterArray[randArrayIndex];
 
         fight(playerEntity, machineEntity);
@@ -82,7 +82,7 @@ public class Game {
         playerEntity.death();
         System.out.println("!!! YOU LOST !!!");
     }
-    public static boolean rematchRequest(){
+    private static boolean rematchRequest(){
         System.out.println("Do you want to restart?\n1)Yes  |   2)No (default)");
         if (input.nextInt() == 1) {
             return true;
