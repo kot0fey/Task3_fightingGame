@@ -12,7 +12,9 @@ abstract class Entity implements Actions {
         this.name = name;
     }
 
-    void getDamage(int damage){healthPoints -= damage;}
+    void getDamage(int damage){
+        healthPoints -= damage;
+    }
     void death(){System.out.println(name + " is dead.");}
     int getHealthPoints(){
         return healthPoints;

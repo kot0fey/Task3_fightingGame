@@ -15,7 +15,7 @@ public class Game {
             System.out.println("________________________");
             choosingCharacters();
         }
-        return true;
+        return rematchRequest();
     }
     private static void choosingCharacters(){
         System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
