@@ -19,18 +19,18 @@ public class Game {
     }
     private static void choosingCharacters(){
         System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
-        Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
+        //Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
         Entity playerEntity;
         int characterArrayIndex = input.nextInt();
-        if (characterArrayIndex > 0 && characterArrayIndex < characterArray.length - 1){
-            playerEntity = characterArray[characterArrayIndex];
+        if (characterArrayIndex > 0 && characterArrayIndex < EntityCharacter.characterArray.length - 1){
+            playerEntity = EntityCharacter.characterArray[characterArrayIndex];
         } else {
-            playerEntity = characterArray[0];
+            playerEntity = EntityCharacter.characterArray[0];
         }
 
         Entity machineEntity;
-        int randArrayIndex = rand.nextInt(0, characterArray.length - 1);
-            machineEntity = characterArray[randArrayIndex];
+        int randArrayIndex = rand.nextInt(0, EntityCharacter.characterArray.length - 1);
+            machineEntity = EntityCharacter.characterArray[randArrayIndex];
 
         fight(playerEntity, machineEntity);
     }
