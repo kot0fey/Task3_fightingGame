@@ -17,9 +17,15 @@ public class Game {
         }
         return rematchRequest();
     }
+    private static void choosingCharactersString(){
+        System.out.println("  Choose your fighter:\n________________________________________________");
+        for (int i = 0; i < EntityCharacter.characterArray.length; i++){
+            System.out.println((i+1) + ")" + EntityCharacter.characterArray[i].getName());
+        }
+        System.out.println("________________________________________________");
+    }
     private static void choosingCharacters(){
-        System.out.println("  Choose your fighter:\n________________________________________________\n1)Scorpio(default)    |    3)Jonny Cage\n2)Subzero             |    4)Khabib Nurmagomedov\n________________________________________________");
-        //Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
+        choosingCharactersString();
         Entity playerEntity;
         int characterArrayIndex = input.nextInt();
         if (characterArrayIndex > 0 && characterArrayIndex < EntityCharacter.characterArray.length + 1){
@@ -36,7 +42,7 @@ public class Game {
     }
 
     private static void fightMessages(Entity playerEntity, Entity machineEntity){
-        System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
+        System.out.println("________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
         String[] entityNameMessageArray = {"You", "Enemy"};
         int[] numberChoiceArray = {input.nextInt(), rand.nextInt(1, 4)};
         Entity[] kickingEntityArray = {machineEntity, playerEntity};
