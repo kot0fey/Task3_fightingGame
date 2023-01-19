@@ -22,51 +22,47 @@ public class Game {
         //Entity[] characterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
         Entity playerEntity;
         int characterArrayIndex = input.nextInt();
-        if (characterArrayIndex > 0 && characterArrayIndex < EntityCharacter.characterArray.length - 1){
-            playerEntity = EntityCharacter.characterArray[characterArrayIndex];
+        if (characterArrayIndex > 0 && characterArrayIndex < EntityCharacter.characterArray.length + 1){
+            playerEntity = EntityCharacter.characterArray[characterArrayIndex - 1];
         } else {
             playerEntity = EntityCharacter.characterArray[0];
         }
 
         Entity machineEntity;
-        int randArrayIndex = rand.nextInt(0, EntityCharacter.characterArray.length - 1);
+        int randArrayIndex = rand.nextInt(0, EntityCharacter.characterArray.length);
             machineEntity = EntityCharacter.characterArray[randArrayIndex];
 
         fight(playerEntity, machineEntity);
     }
+
+    private static void fightMessages(Entity playerEntity, Entity machineEntity){
+        System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
+        String[] entityNameMessageArray = {"You", "Enemy"};
+        int[] numberChoiceArray = {input.nextInt(), rand.nextInt(1, 4)};
+        Entity[] kickingEntityArray = {machineEntity, playerEntity};
+        Entity[] gettingKickedEntityArray = {playerEntity, machineEntity};
+        for (int i = 0; i < 2; i++){
+            switch (numberChoiceArray[i]){
+                case 2 -> {
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick(rand));
+                    System.out.println(entityNameMessageArray[i] + " used hand punch");
+                }
+                case 3 -> {
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick(rand));
+                    System.out.println(entityNameMessageArray[i] + " used leg kick");
+                }
+                default -> {
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick(rand));
+                    System.out.println(entityNameMessageArray[i] + " used head punch");
+                }
+            }
+        }
+        System.out.println("Your HP is: " + playerEntity.getHealthPoints() + "\nEnemy's HP is: " + machineEntity.getHealthPoints());
+    }
     private static void fight(Entity playerEntity, Entity machineEntity){
         System.out.println("________________________\n        !!! FIGHT !!!\n________________________\n" + playerEntity.getName() + " VS " + machineEntity.getName());
         while(playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0){
-            System.out.println("\n________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
-            switch (input.nextInt()){
-                case 2 -> {
-                    machineEntity.getDamage(playerEntity.handKick(rand));
-                    System.out.println("You used hand punch");
-                }
-                case 3 -> {
-                    machineEntity.getDamage(playerEntity.legKick(rand));
-                    System.out.println("You used leg kick");
-                }
-                default -> {
-                    machineEntity.getDamage(playerEntity.headKick( rand));
-                    System.out.println("You used head punch");
-                }
-            }
-            switch (rand.nextInt(1, 3)){
-                case 2 -> {
-                    playerEntity.getDamage(machineEntity.handKick(rand));
-                    System.out.println("Enemy used hand punch");
-                }
-                case 3 -> {
-                    playerEntity.getDamage(machineEntity.legKick(rand));
-                    System.out.println("Enemy used leg kick");
-                }
-                default -> {
-                    playerEntity.getDamage(machineEntity.headKick(rand));
-                    System.out.println("Enemy used head punch");
-                }
-            }
-            System.out.println("Your HP is: " + playerEntity.getHealthPoints() + "\nEnemy's HP is: " + machineEntity.getHealthPoints());
+            fightMessages(playerEntity, machineEntity);
         }
         if (playerEntity.getHealthPoints() <= 0){
             loose(playerEntity);
