@@ -4,10 +4,12 @@ import com.utils.*;
 
 abstract class Entity implements Actions {
     private int healthPoints;
-    private final int power;
+    protected int power;
     private final String name;
-    protected Entity(int healthPoints, int power, String name){
-        this.healthPoints = healthPoints;
+    final private int maxHealthPoints;
+    protected Entity(int maxHealthPoints, int power, String name){
+        this.healthPoints = maxHealthPoints;
+        this.maxHealthPoints = maxHealthPoints;
         this.power = power;
         this.name = name;
     }
@@ -18,6 +20,9 @@ abstract class Entity implements Actions {
     void death(){System.out.println(name + " is dead.");}
     int getHealthPoints(){
         return healthPoints;
+    }
+    int getMaxHealthPoints(){
+        return maxHealthPoints;
     }
     String getName(){
         return name;
