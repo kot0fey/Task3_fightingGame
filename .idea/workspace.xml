@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #1 from (18.01.2023) + Environment update (launch Main from any file)">
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #4 from (18.01.2023) + Interface update">
+      <change afterPath="$PROJECT_DIR$/src/com/utils/Rand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Actions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/EntityCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/EntityCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674157565465</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fix request #4 from (18.01.2023) + Interface update">
+      <created>1674158317160</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1674158317160</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,6 +177,7 @@
     <MESSAGE value="Fix request #5 from (18.01.2023) + Main update" />
     <MESSAGE value="Fix request #3 from (18.01.2023)" />
     <MESSAGE value="Fix request #1 from (18.01.2023) + Environment update (launch Main from any file)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix request #1 from (18.01.2023) + Environment update (launch Main from any file)" />
+    <MESSAGE value="Fix request #4 from (18.01.2023) + Interface update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix request #4 from (18.01.2023) + Interface update" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 package com.task3;
 
-import java.util.Random;
+import com.utils.*;
 
 abstract class Entity implements Actions {
     private int healthPoints;
@@ -22,19 +22,19 @@ abstract class Entity implements Actions {
     String getName(){
         return name;
     }
-    public int headKick(Random rand){
+    public int headKick(){
         int maxDamage = power * 50 / 100;
         int minDamage = power * 20 / 100;
-        return rand.nextInt(minDamage, maxDamage);
+        return Rand.Int(minDamage, maxDamage);
     }
-    public int handKick(Random rand){
+    public int handKick() {
         int maxDamage = power * 80 / 100;
         int minDamage = power * 40 / 100;
-        return rand.nextInt(minDamage, maxDamage);}
-
-    public int legKick(Random rand){
+        return Rand.Int(minDamage, maxDamage);
+    }
+    public int legKick(){
         int maxDamage = power * 100 / 100;
         int minDamage = power * 70 / 100;
-        return rand.nextInt(minDamage, maxDamage);
+        return Rand.Int(minDamage, maxDamage);
     }
 }

@@ -1,12 +1,10 @@
 package com.task3;
 
-import java.util.Random;
+import com.utils.*;
 import java.util.Scanner;
 
 public class Game {
     static private final Scanner input = new Scanner(System.in);
-    static private final Random rand = new Random();
-
     public static boolean start(){
         System.out.println("      FIGHTER GAME\n________________________\n         Press:\nAny number)    To start\n         0)    To exit\n________________________\n      Your choice: ");
         if (input.nextInt() == 0){
@@ -35,7 +33,7 @@ public class Game {
         }
 
         Entity machineEntity;
-        int randArrayIndex = rand.nextInt(0, EntityCharacter.characterArray.length);
+        int randArrayIndex = Rand.Int(0, EntityCharacter.characterArray.length);
             machineEntity = EntityCharacter.characterArray[randArrayIndex];
 
         fight(playerEntity, machineEntity);
@@ -44,21 +42,21 @@ public class Game {
     private static void fightMessages(Entity playerEntity, Entity machineEntity){
         System.out.println("________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
         String[] entityNameMessageArray = {"You", "Enemy"};
-        int[] numberChoiceArray = {input.nextInt(), rand.nextInt(1, 4)};
+        int[] numberChoiceArray = {input.nextInt(), Rand.Int(1, 4)};
         Entity[] kickingEntityArray = {machineEntity, playerEntity};
         Entity[] gettingKickedEntityArray = {playerEntity, machineEntity};
         for (int i = 0; i < 2; i++){
             switch (numberChoiceArray[i]){
                 case 2 -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick(rand));
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick());
                     System.out.println(entityNameMessageArray[i] + " used hand punch");
                 }
                 case 3 -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick(rand));
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick());
                     System.out.println(entityNameMessageArray[i] + " used leg kick");
                 }
                 default -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick(rand));
+                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick());
                     System.out.println(entityNameMessageArray[i] + " used head punch");
                 }
             }
@@ -75,6 +73,7 @@ public class Game {
         } else {
             win(machineEntity);
         }
+        EntityCharacter.restart();
     }
     private static void win(Entity machineEntity){
         machineEntity.death();
@@ -86,9 +85,6 @@ public class Game {
     }
     private static boolean rematchRequest(){
         System.out.println("Do you want to restart?\n1)Yes  |   2)No (default)");
-        if (input.nextInt() == 1) {
-            return true;
-        }
-        return false;
+        return input.nextInt() == 1;
     }
 }
