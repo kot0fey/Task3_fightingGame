@@ -1,7 +1,7 @@
 package com.task3;
 
 class Subzero extends Entity {
-    Subzero(){
+    Subzero() {
         super(90, 40, "Subzero");
     }
 }

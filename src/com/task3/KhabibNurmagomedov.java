@@ -1,7 +1,7 @@
 package com.task3;
 
 class KhabibNurmagomedov extends Entity {
-    KhabibNurmagomedov(){
+    KhabibNurmagomedov() {
         super(150, 70, "Khabib Nurmagomedov");
     }
 }
