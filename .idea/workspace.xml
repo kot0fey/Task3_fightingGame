@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #7 from (18.01.2023)">
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #1 &amp; #4 from (21.01.2023)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Actions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/EntityCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/EntityCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Scorpio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Scorpio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Subzero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/utils/Rand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/utils/Rand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +40,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -183,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674221437987</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix request #1 &amp; #4 from (21.01.2023)">
+      <created>1674318360251</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674318360251</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,7 +202,8 @@
     <MESSAGE value="Fix request #1 from (18.01.2023) + Environment update (launch Main from any file)" />
     <MESSAGE value="Fix request #4 from (18.01.2023) + Interface update" />
     <MESSAGE value="Fix request #6 from (18.01.2023) + Fixed bug with saving HP after restart + Found bug with one HP for two identical characters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix request #6 from (18.01.2023) + Fixed bug with saving HP after restart + Found bug with one HP for two identical characters" />
+    <MESSAGE value="Fix request #1 &amp; #4 from (21.01.2023)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix request #1 &amp; #4 from (21.01.2023)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

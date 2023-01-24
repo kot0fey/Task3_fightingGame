@@ -20,25 +20,26 @@ public class Game {
 
     private static void choosingCharactersString() {
         System.out.println("  Choose your fighter:\n________________________________________________");
-        for (int i = 0; i < EntityCharacter.characterArray.length; i++) {
-            System.out.println((i + 1) + ")" + EntityCharacter.characterArray[i].getName());
+        for (int i = 0; i < EntityCharacter.length(); i++) {
+            System.out.println((i + 1) + ")" + EntityCharacter.getCharacter(i).getName());
         }
         System.out.println("________________________________________________");
     }
 
     private static void choosingCharacters() {
+        EntityCharacter.refresh();
         choosingCharactersString();
         Entity playerEntity;
-        int characterArrayIndex = input.nextInt();
-        if (characterArrayIndex > 0 && characterArrayIndex < EntityCharacter.characterArray.length + 1) {
-            playerEntity = EntityCharacter.characterArray[characterArrayIndex - 1];
+        int userCharacterChoice = input.nextInt();
+        if (userCharacterChoice > 0 && userCharacterChoice < EntityCharacter.length() + 1) {
+            playerEntity = EntityCharacter.getCharacter(userCharacterChoice - 1);
         } else {
-            playerEntity = EntityCharacter.characterArray[0];
+            playerEntity = EntityCharacter.getCharacter(0);
         }
 
         Entity machineEntity;
-        int randArrayIndex = Rand.nextInt(0, EntityCharacter.characterArray.length);
-        machineEntity = EntityCharacter.characterArray[randArrayIndex];
+        int randArrayIndex = Rand.nextInt(0, EntityCharacter.length(), userCharacterChoice);
+        machineEntity = EntityCharacter.getCharacter(randArrayIndex);
 
         fight(playerEntity, machineEntity);
     }
@@ -78,7 +79,6 @@ public class Game {
         } else {
             win(machineEntity);
         }
-        EntityCharacter.restart();
     }
 
     private static void win(Entity machineEntity) {
