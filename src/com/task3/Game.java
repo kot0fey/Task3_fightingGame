@@ -8,22 +8,22 @@ public class Game {
     static private final Scanner input = new Scanner(System.in);
 
     public static boolean start() {
-        System.out.println("      FIGHTER GAME\n________________________\n         Press:\nAny number)    To start\n         0)    To exit\n________________________\n      Your choice: ");
+        System.out.println(Messages.startMessage);
         if (input.nextInt() == 0) {
             return false;
         } else {
-            System.out.println("________________________");
+            System.out.println(Messages.underLine24);
             choosingCharacters();
         }
         return rematchRequest();
     }
 
     private static void choosingCharactersString() {
-        System.out.println("  Choose your fighter:\n________________________________________________");
+        System.out.println(Messages.choosingMessage);
         for (int i = 0; i < EntityCharacter.length(); i++) {
             System.out.println((i + 1) + ")" + EntityCharacter.getCharacter(i).getName());
         }
-        System.out.println("________________________________________________");
+        System.out.println(Messages.underLine48);
     }
 
     private static void choosingCharacters() {
@@ -45,7 +45,7 @@ public class Game {
     }
 
     private static void fightMessages(Entity playerEntity, Entity machineEntity) {
-        System.out.println("________________________\n  Choose your skill:\n1)Head punch (default)\n2)Hand punch\n3)Leg kick");
+        System.out.println(Messages.fightStartMessage);
         String[] entityNameMessageArray = {"You", "Enemy"};
         int[] numberChoiceArray = {input.nextInt(), Rand.nextInt(1, 4)};
         Entity[] kickingEntityArray = {machineEntity, playerEntity};
@@ -66,11 +66,11 @@ public class Game {
                 }
             }
         }
-        System.out.println("Your HP is: " + playerEntity.getHealthPoints() + "\nEnemy's HP is: " + machineEntity.getHealthPoints());
+        System.out.println(Messages.healthPointsStatusMessage_1 + playerEntity.getHealthPoints() + Messages.healthPointsStatusMessage_2 + machineEntity.getHealthPoints());
     }
 
     private static void fight(Entity playerEntity, Entity machineEntity) {
-        System.out.println("________________________\n        !!! FIGHT !!!\n________________________\n" + playerEntity.getName() + " VS " + machineEntity.getName());
+        System.out.println(Messages.fightTitleMessage_1 + playerEntity.getName() + Messages.fightTitleMessage_2 + machineEntity.getName());
         while (playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0) {
             fightMessages(playerEntity, machineEntity);
         }
@@ -83,16 +83,16 @@ public class Game {
 
     private static void win(Entity machineEntity) {
         machineEntity.death();
-        System.out.println("!!! YOU WON !!!");
+        System.out.println(Messages.winMessage);
     }
 
     private static void loose(Entity playerEntity) {
         playerEntity.death();
-        System.out.println("!!! YOU LOST !!!");
+        System.out.println(Messages.looseMessage);
     }
 
     private static boolean rematchRequest() {
-        System.out.println("Do you want to restart?\n1)Yes  |   2)No (default)");
+        System.out.println(Messages.rematchMessage);
         return input.nextInt() == 1;
     }
 }
