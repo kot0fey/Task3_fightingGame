@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #1 from (25.01.2023)" />
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you">
+      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponAxe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponDagger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Subzero.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,7 +238,8 @@
     <MESSAGE value="Fix request #1 &amp; #4 from (21.01.2023)" />
     <MESSAGE value="Fix request #3 from (21.01.2023) + Now machine can't choose same character as user (fixed bug with one HP bar for both sides)" />
     <MESSAGE value="Fix request #1 from (25.01.2023)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix request #1 from (25.01.2023)" />
+    <MESSAGE value="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

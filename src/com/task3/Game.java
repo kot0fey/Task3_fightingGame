@@ -1,5 +1,6 @@
 package com.task3;
 
+import com.task3.weapons.WeaponArray;
 import com.utils.*;
 
 import java.util.Scanner;
@@ -8,27 +9,19 @@ public class Game {
     static private final Scanner input = new Scanner(System.in);
 
     public static boolean start() {
-        System.out.println(Messages.startMessage);
+        Message.startMessage();
         if (input.nextInt() == 0) {
             return false;
         } else {
-            System.out.println(Messages.underLine24);
             choosingCharacters();
         }
         return rematchRequest();
     }
 
-    private static void choosingCharactersString() {
-        System.out.println(Messages.choosingMessage);
-        for (int i = 0; i < EntityCharacter.length(); i++) {
-            System.out.println((i + 1) + ")" + EntityCharacter.getCharacter(i).getName());
-        }
-        System.out.println(Messages.underLine48);
-    }
 
     private static void choosingCharacters() {
         EntityCharacter.refresh();
-        choosingCharactersString();
+        Message.choosingCharacter(EntityCharacter.getInstance());
         Entity playerEntity;
         int userCharacterChoice = input.nextInt();
         if (userCharacterChoice > 0 && userCharacterChoice < EntityCharacter.length() + 1) {
@@ -38,39 +31,49 @@ public class Game {
         }
 
         Entity machineEntity;
-        int randArrayIndex = Rand.nextInt(0, EntityCharacter.length(), userCharacterChoice);
+        int randArrayIndex = Rand.nextInt(0, EntityCharacter.length(), userCharacterChoice - 1);
         machineEntity = EntityCharacter.getCharacter(randArrayIndex);
-
+        choosingWeapon(playerEntity, machineEntity);
         fight(playerEntity, machineEntity);
     }
 
+    private static void choosingWeapon(Entity playerEntity, Entity machineEntity) {
+        Message.underLine48();
+        Message.choosingWeapon();
+        playerEntity.setWeapon(WeaponArray.getWeapon(input.nextInt() - 1));
+        Message.chosenWeaponPlayer(playerEntity);
+        machineEntity.setWeapon(WeaponArray.getWeapon(Rand.nextInt(0, WeaponArray.length())));
+        Message.chosenWeaponMachine(machineEntity);
+    }
+
     private static void fightMessages(Entity playerEntity, Entity machineEntity) {
-        System.out.println(Messages.fightStartMessage);
+        Message.fightStartMessage();
         String[] entityNameMessageArray = {"You", "Enemy"};
         int[] numberChoiceArray = {input.nextInt(), Rand.nextInt(1, 4)};
         Entity[] kickingEntityArray = {machineEntity, playerEntity};
         Entity[] gettingKickedEntityArray = {playerEntity, machineEntity};
+        int currentDamage;
         for (int i = 0; i < 2; i++) {
             switch (numberChoiceArray[i]) {
                 case 2 -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick());
-                    System.out.println(entityNameMessageArray[i] + " used hand punch");
+                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick());
+                    Message.handPunch(entityNameMessageArray[i], currentDamage);
                 }
                 case 3 -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick());
-                    System.out.println(entityNameMessageArray[i] + " used leg kick");
+                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick());
+                    Message.legKick(entityNameMessageArray[i], currentDamage);
                 }
                 default -> {
-                    kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick());
-                    System.out.println(entityNameMessageArray[i] + " used head punch");
+                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick());
+                    Message.headPunch(entityNameMessageArray[i], currentDamage);
                 }
             }
         }
-        System.out.println(Messages.healthPointsStatusMessage_1 + playerEntity.getHealthPoints() + Messages.healthPointsStatusMessage_2 + machineEntity.getHealthPoints());
+        Message.healthPointsStatus(playerEntity, machineEntity);
     }
 
     private static void fight(Entity playerEntity, Entity machineEntity) {
-        System.out.println(Messages.fightTitleMessage_1 + playerEntity.getName() + Messages.fightTitleMessage_2 + machineEntity.getName());
+        Message.fightTitle(playerEntity, machineEntity);
         while (playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0) {
             fightMessages(playerEntity, machineEntity);
         }
@@ -79,20 +82,21 @@ public class Game {
         } else {
             win(machineEntity);
         }
+        Message.underLine48();
     }
 
     private static void win(Entity machineEntity) {
         machineEntity.death();
-        System.out.println(Messages.winMessage);
+        Message.winMessage();
     }
 
     private static void loose(Entity playerEntity) {
         playerEntity.death();
-        System.out.println(Messages.looseMessage);
+        Message.looseMessage();
     }
 
     private static boolean rematchRequest() {
-        System.out.println(Messages.rematchMessage);
+        Message.rematchMessage();
         return input.nextInt() == 1;
     }
 }
