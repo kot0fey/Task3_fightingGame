@@ -1,9 +1,10 @@
-package com.task3.characters;
+package com.task3.characters.actualCharacters;
 
+import com.task3.characters.Entity;
 import com.task3.utils.Rand;
 
-class Scorpio extends Entity {
-    Scorpio() {
+public class Scorpio extends Entity {
+    public Scorpio() {
         super(100, 50, "Scorpio");
     }
 

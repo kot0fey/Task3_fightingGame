@@ -62,7 +62,6 @@ public abstract class Entity implements Actions {
     public void setWeapon(WeaponStrategy weapon) {
         this.weapon = weapon;
         setPerks();
-        System.out.println(maxHealthPoints);
     }
 
     private void setPerks() {

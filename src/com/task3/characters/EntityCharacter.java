@@ -1,5 +1,7 @@
 package com.task3.characters;
 
+import com.task3.characters.actualCharacters.*;
+
 public class EntityCharacter {
     private static EntityCharacter instance;
     private static Entity[] characterArray;

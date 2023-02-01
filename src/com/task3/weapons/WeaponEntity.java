@@ -1,9 +1,15 @@
 package com.task3.weapons;
 
-public class WeaponDagger implements WeaponStrategy {
-    int healthPerk = 60;
-    int powerPerk = 5;//percent
-    String name = "Dagger";
+public abstract class WeaponEntity implements WeaponStrategy {
+    protected int healthPerk;//percent
+    protected int powerPerk;//percent
+    protected String name;
+
+    protected WeaponEntity(int healthPerk, int powerPerk, String name) {
+        this.healthPerk = healthPerk;
+        this.powerPerk = powerPerk;
+        this.name = name;
+    }
 
     public int setMaxHealthPointsPerk(int maxHealthPoints) {
         maxHealthPoints *= (100 + healthPerk);
@@ -28,5 +34,4 @@ public class WeaponDagger implements WeaponStrategy {
     public int getPowerPerk() {
         return powerPerk;
     }
-
 }

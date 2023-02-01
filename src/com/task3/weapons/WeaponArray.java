@@ -1,5 +1,7 @@
 package com.task3.weapons;
 
+import com.task3.weapons.actualWeapons.*;
+
 public class WeaponArray {
     private static final WeaponStrategy[] originalArray = {new WeaponDagger(), new WeaponSword(), new WeaponAxe()};
 
