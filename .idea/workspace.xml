@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you">
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponAxe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponDagger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponSword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Actions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/EntityCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/EntityCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Subzero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/JonnyCage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/KhabibNurmagomedov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Scorpio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Scorpio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Subzero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674681155776</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you">
+      <created>1674948729815</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674948729815</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

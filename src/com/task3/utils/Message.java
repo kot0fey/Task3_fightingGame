@@ -1,5 +1,7 @@
-package com.task3;
+package com.task3.utils;
 
+import com.task3.characters.EntityCharacter;
+import com.task3.characters.Entity;
 import com.task3.weapons.WeaponArray;
 
 public class Message {

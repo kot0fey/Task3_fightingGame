@@ -1,4 +1,4 @@
-package com.task3;
+package com.task3.characters;
 
 interface Actions {
     int headKick();

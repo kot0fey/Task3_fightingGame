@@ -1,4 +1,4 @@
-package com.utils;
+package com.task3.utils;
 
 import java.util.Random;
 

@@ -1,5 +1,4 @@
-package com.task3;
-
+package com.task3.characters;
 
 public class EntityCharacter {
     private static EntityCharacter instance;

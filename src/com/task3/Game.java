@@ -1,7 +1,9 @@
 package com.task3;
 
+import com.task3.characters.Entity;
+import com.task3.characters.EntityCharacter;
 import com.task3.weapons.WeaponArray;
-import com.utils.*;
+import com.task3.utils.*;
 
 import java.util.Scanner;
 

@@ -1,9 +1,10 @@
-package com.task3;
+package com.task3.characters;
 
+import com.task3.utils.Message;
 import com.task3.weapons.WeaponStrategy;
-import com.utils.*;
+import com.task3.utils.*;
 
-abstract class Entity implements Actions {
+public abstract class Entity implements Actions {
     private int healthPoints;
     protected int power;
     private final String name;
@@ -17,26 +18,26 @@ abstract class Entity implements Actions {
         this.name = name;
     }
 
-    int getDamage(int damage) {
+    public int getDamage(int damage) {
         healthPoints -= damage;
         return damage;
     }
 
-    void death() {
+    public void death() {
         Message.underLine24();
         System.out.println(name + " is dead.");
         Message.underLine48();
     }
 
-    int getHealthPoints() {
+    public int getHealthPoints() {
         return healthPoints;
     }
 
-    int getMaxHealthPoints() {
+    public int getMaxHealthPoints() {
         return maxHealthPoints;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -58,7 +59,7 @@ abstract class Entity implements Actions {
         return Rand.nextInt(minDamage, maxDamage);
     }
 
-    protected void setWeapon(WeaponStrategy weapon) {
+    public void setWeapon(WeaponStrategy weapon) {
         this.weapon = weapon;
         setPerks();
         System.out.println(maxHealthPoints);
@@ -71,15 +72,15 @@ abstract class Entity implements Actions {
         }
     }
 
-    protected String getPickedWeaponName() {
+    public String getPickedWeaponName() {
         return weapon.getName();
     }
 
-    protected int getHealthPointsPerk() {
+    public int getHealthPointsPerk() {
         return weapon.getHealthPointsPerk();
     }
 
-    protected int getPowerPerk() {
+    public int getPowerPerk() {
         return weapon.getPowerPerk();
     }
 

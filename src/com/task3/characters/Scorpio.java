@@ -1,6 +1,6 @@
-package com.task3;
+package com.task3.characters;
 
-import com.utils.Rand;
+import com.task3.utils.Rand;
 
 class Scorpio extends Entity {
     Scorpio() {

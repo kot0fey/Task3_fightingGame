@@ -1,4 +1,4 @@
-package com.task3;
+package com.task3.characters;
 
 
 class Subzero extends Entity {
