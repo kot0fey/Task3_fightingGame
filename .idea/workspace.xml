@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #2 from (30.01.2023)">
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/actualWeapons/WeaponAxe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/actualWeapons/WeaponDagger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/weapons/actualWeapons/WeaponSword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Entity.java" afterDir="false" />
+    <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Fix request #1 + #2(update) from (30.01.2023)">
       <change beforePath="$PROJECT_DIR$/src/com/task3/characters/EntityCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/EntityCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/JonnyCage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/actualCharacters/JonnyCage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/KhabibNurmagomedov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/actualCharacters/KhabibNurmagomedov.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/Scorpio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/actualCharacters/Scorpio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/Subzero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/actualCharacters/Subzero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/weapons/WeaponAxe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/weapons/WeaponDagger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/weapons/WeaponSword.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675271038946</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fix request #1 + #2(update) from (30.01.2023)">
+      <created>1675272391480</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1675272391480</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,7 +250,8 @@
     <MESSAGE value="Fix request #1 from (25.01.2023)" />
     <MESSAGE value="Fix request #2 from (25.01.2023) + Interface update (now all Messages are methods) + Machine can't choose same character as you" />
     <MESSAGE value="Fix request #2 from (30.01.2023)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix request #2 from (30.01.2023)" />
+    <MESSAGE value="Fix request #1 + #2(update) from (30.01.2023)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix request #1 + #2(update) from (30.01.2023)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

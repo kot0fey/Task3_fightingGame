@@ -5,10 +5,9 @@ import com.task3.characters.actualCharacters.*;
 public class EntityCharacter {
     private static EntityCharacter instance;
     private static Entity[] characterArray;
-    private static final Entity[] originalCharacterArray = {new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
 
     private EntityCharacter() {
-        characterArray = originalCharacterArray;
+        characterArray = new Entity[]{new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
     }
 
     public static EntityCharacter getInstance() {
