@@ -1,5 +1,6 @@
 package com.task3;
 
+import MyArrayList.MyArrayList;
 import com.task3.characters.Entity;
 import com.task3.characters.EntityCharacter;
 import com.task3.weapons.WeaponArray;
@@ -50,24 +51,32 @@ public class Game {
 
     private static void fightMessages(Entity playerEntity, Entity machineEntity) {
         Message.fightStartMessage();
-        String[] entityNameMessageArray = {"You", "Enemy"};
-        int[] numberChoiceArray = {input.nextInt(), Rand.nextInt(1, 4)};
-        Entity[] kickingEntityArray = {machineEntity, playerEntity};
-        Entity[] gettingKickedEntityArray = {playerEntity, machineEntity};
+        MyArrayList<String> entityNameMessageArray = new MyArrayList<String>();
+        entityNameMessageArray.add("You");
+        entityNameMessageArray.add("Enemy");
+        MyArrayList<Integer> numberChoiceArray = new MyArrayList<Integer>();
+        numberChoiceArray.add(input.nextInt());
+        numberChoiceArray.add(Rand.nextInt(1, 4));
+        MyArrayList<Entity> kickingEntityArray = new MyArrayList<Entity>();
+        kickingEntityArray.add(machineEntity);
+        kickingEntityArray.add(playerEntity);
+        MyArrayList<Entity> gettingKickedEntityArray = new MyArrayList<Entity>();
+        gettingKickedEntityArray.add(playerEntity);
+        gettingKickedEntityArray.add(machineEntity);
         int currentDamage;
         for (int i = 0; i < 2; i++) {
-            switch (numberChoiceArray[i]) {
+            switch (numberChoiceArray.get(i)) {
                 case 2 -> {
-                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].handKick());
-                    Message.handPunch(entityNameMessageArray[i], currentDamage);
+                    currentDamage = kickingEntityArray.get(i).getDamage(gettingKickedEntityArray.get(i).handKick());
+                    Message.handPunch(entityNameMessageArray.get(i), currentDamage);
                 }
                 case 3 -> {
-                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].legKick());
-                    Message.legKick(entityNameMessageArray[i], currentDamage);
+                    currentDamage = kickingEntityArray.get(i).getDamage(gettingKickedEntityArray.get(i).legKick());
+                    Message.legKick(entityNameMessageArray.get(i), currentDamage);
                 }
                 default -> {
-                    currentDamage = kickingEntityArray[i].getDamage(gettingKickedEntityArray[i].headKick());
-                    Message.headPunch(entityNameMessageArray[i], currentDamage);
+                    currentDamage = kickingEntityArray.get(i).getDamage(gettingKickedEntityArray.get(i).headKick());
+                    Message.headPunch(entityNameMessageArray.get(i), currentDamage);
                 }
             }
         }

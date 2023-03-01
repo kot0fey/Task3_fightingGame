@@ -1,13 +1,17 @@
 package com.task3.characters;
 
+import MyArrayList.MyArrayList;
 import com.task3.characters.actualCharacters.*;
 
 public class EntityCharacter {
     private static EntityCharacter instance;
-    private static Entity[] characterArray;
+    private static MyArrayList<Entity> characterArray = new MyArrayList<Entity>();
 
     private EntityCharacter() {
-        characterArray = new Entity[]{new Scorpio(), new Subzero(), new JonnyCage(), new KhabibNurmagomedov()};
+        characterArray.add(new Scorpio());
+        characterArray.add(new Subzero());
+        characterArray.add(new JonnyCage());
+        characterArray.add(new KhabibNurmagomedov());
     }
 
     public static EntityCharacter getInstance() {
@@ -18,7 +22,7 @@ public class EntityCharacter {
     }
 
     public static Entity getCharacter(int index) {
-        return characterArray[index];
+        return characterArray.get(index);
     }
 
     public static void clear() {
@@ -31,7 +35,7 @@ public class EntityCharacter {
     }
 
     public static int length() {
-        return characterArray.length;
+        return characterArray.size();
     }
 
 }
