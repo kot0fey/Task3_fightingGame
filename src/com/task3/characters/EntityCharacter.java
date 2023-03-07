@@ -26,6 +26,7 @@ public class EntityCharacter {
     }
 
     public static void clear() {
+        characterArray.clear();
         instance = null;
     }
 

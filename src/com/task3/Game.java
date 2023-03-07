@@ -43,7 +43,13 @@ public class Game {
     private static void choosingWeapon(Entity playerEntity, Entity machineEntity) {
         Message.underLine48();
         Message.choosingWeapon();
-        playerEntity.setWeapon(WeaponArray.getWeapon(input.nextInt() - 1));
+        int userWeaponChoice = input.nextInt();
+        if (userWeaponChoice > 0 && userWeaponChoice < WeaponArray.length() + 1) {
+            playerEntity.setWeapon(WeaponArray.getWeapon(userWeaponChoice - 1));
+        } else {
+            playerEntity.setWeapon(WeaponArray.getWeapon(0));
+        }
+        
         Message.chosenWeaponPlayer(playerEntity);
         machineEntity.setWeapon(WeaponArray.getWeapon(Rand.nextInt(0, WeaponArray.length())));
         Message.chosenWeaponMachine(machineEntity);
