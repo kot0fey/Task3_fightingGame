@@ -20,6 +20,9 @@ public abstract class Entity implements Actions {
 
     public int getDamage(int damage) {
         healthPoints -= damage;
+        if (healthPoints < 0) {
+            healthPoints = 0;
+        }
         return damage;
     }
 
