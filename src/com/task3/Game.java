@@ -2,40 +2,51 @@ package com.task3;
 
 import MyArrayList.MyArrayList;
 import com.task3.characters.Entity;
-import com.task3.characters.EntityCharacter;
+import com.task3.characters.EntityArray;
 import com.task3.weapons.WeaponArray;
 import com.task3.utils.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Game {
     static private final Scanner input = new Scanner(System.in);
 
-    public static boolean start() {
+    public static boolean start() throws IOException {
         Message.startMessage();
-        if (input.nextInt() == 0) {
-            return false;
-        } else {
-            choosingCharacters();
+        EntityArray.refresh();
+
+        switch (input.nextInt()) {
+            case 1 -> {
+                Stats.start();
+                return true;
+            }
+            case 0 -> {
+                return false;
+            }
+            default -> {
+                choosingCharacters();
+            }
         }
+
         return rematchRequest();
     }
 
 
     private static void choosingCharacters() {
-        EntityCharacter.refresh();
-        Message.choosingCharacter(EntityCharacter.getInstance());
+        //EntityArray.getInstance()
+        Message.choosingCharacter();
         Entity playerEntity;
         int userCharacterChoice = input.nextInt();
-        if (userCharacterChoice > 0 && userCharacterChoice < EntityCharacter.length() + 1) {
-            playerEntity = EntityCharacter.getCharacter(userCharacterChoice - 1);
+        if (userCharacterChoice > 0 && userCharacterChoice < EntityArray.length() + 1) {
+            playerEntity = EntityArray.getCharacter(userCharacterChoice - 1);
         } else {
-            playerEntity = EntityCharacter.getCharacter(0);
+            playerEntity = EntityArray.getCharacter(0);
         }
 
         Entity machineEntity;
-        int randArrayIndex = Rand.nextInt(0, EntityCharacter.length(), userCharacterChoice - 1);
-        machineEntity = EntityCharacter.getCharacter(randArrayIndex);
+        int randArrayIndex = Rand.nextInt(0, EntityArray.length(), userCharacterChoice - 1);
+        machineEntity = EntityArray.getCharacter(randArrayIndex);
         choosingWeapon(playerEntity, machineEntity);
         fight(playerEntity, machineEntity);
     }
@@ -49,7 +60,7 @@ public class Game {
         } else {
             playerEntity.setWeapon(WeaponArray.getWeapon(0));
         }
-        
+
         Message.chosenWeaponPlayer(playerEntity);
         machineEntity.setWeapon(WeaponArray.getWeapon(Rand.nextInt(0, WeaponArray.length())));
         Message.chosenWeaponMachine(machineEntity);
@@ -94,12 +105,15 @@ public class Game {
         while (playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0) {
             fightMessages(playerEntity, machineEntity);
         }
-        if (playerEntity.getHealthPoints() <= 0) {
+        if (playerEntity.getHealthPoints() == 0 && machineEntity.getHealthPoints() > 0) {
             loose(playerEntity);
-        } else {
+        } else if (machineEntity.getHealthPoints() == 0 && playerEntity.getHealthPoints() > 0) {
             win(machineEntity);
+        } else {
+            draw(playerEntity, machineEntity);
         }
         Message.underLine48();
+        Logger.setLog(playerEntity, machineEntity);
     }
 
     private static void win(Entity machineEntity) {
@@ -110,6 +124,14 @@ public class Game {
     private static void loose(Entity playerEntity) {
         playerEntity.death();
         Message.looseMessage();
+    }
+
+    private static void draw(Entity playerEntity, Entity machineEntity) {
+        playerEntity.death();
+        machineEntity.death();
+        playerEntity.setWinFlag('D');
+        machineEntity.setWinFlag('D');
+        Message.drawMessage();
     }
 
     private static boolean rematchRequest() {

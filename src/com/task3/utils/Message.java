@@ -1,14 +1,18 @@
 package com.task3.utils;
 
-import com.task3.characters.EntityCharacter;
+import com.task3.characters.EntityArray;
 import com.task3.characters.Entity;
 import com.task3.weapons.WeaponArray;
+
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Message {
     public static void startMessage() {
         System.out.println("\n      FIGHTER GAME");
         Message.underLine24();
-        System.out.println("         Press:\nAny number)    To start\n         0)    To exit");
+        System.out.println("         Press:\nAny number)    To start\n         1)    Stats\n         0)    To exit");
         Message.underLine24();
         System.out.print("      Your choice: ");
     }
@@ -39,6 +43,11 @@ public class Message {
         System.out.println("!!! YOU LOST !!!");
     }
 
+    public static void drawMessage() {
+        System.out.println("!!! DRAW !!!");
+
+    }
+
     public static void choosingWeapon() {
         System.out.println("Choose your weapon");
         Message.underLine24();
@@ -66,12 +75,12 @@ public class Message {
         Message.underLine48();
     }
 
-    public static void choosingCharacter(EntityCharacter entityCharacter) {
+    public static void choosingCharacter() {
         Message.underLine48();
         System.out.println("  Choose your fighter:");
         Message.underLine24();
-        for (int i = 0; i < EntityCharacter.length(); i++) {
-            System.out.println((i + 1) + ")" + EntityCharacter.getCharacter(i).getName());
+        for (int i = 0; i < EntityArray.length(); i++) {
+            System.out.println((i + 1) + ")" + EntityArray.getCharacter(i).getName());
         }
         Message.underLine24();
         System.out.print("      Your choice: ");
@@ -99,5 +108,26 @@ public class Message {
         System.out.println(playerEntity.getName() + " VS " + machineEntity.getName());
     }
 
+    public static void statsFavorites(Object favoriteEntity, Object favoriteWeapon) {
+        Message.underLine48();
+        System.out.println("Statistics");
+        System.out.println("Favorite character: " + favoriteEntity);
+        System.out.println("Favorite weapon: " + favoriteWeapon + "\n");
+    }
+
+    public static void statsWLD(Set entities, Map entitiesToWins, Map entitiesToLoses, Map entitiesToDraws) {
+        System.out.println("W/L/D:");
+        for (Object entity : entities) {
+            System.out.println(entity + ": " + entitiesToWins.get(entity) + "/" + entitiesToLoses.get(entity) + "/" + entitiesToDraws.get(entity));
+        }
+        Message.underLine24();
+    }
+
+    public static void statsExit() {
+        System.out.print("Any key) Back");
+        Scanner scanner = new Scanner(System.in);
+        scanner.next();
+        Message.underLine48();
+    }
 
 }

@@ -11,6 +11,8 @@ public abstract class Entity implements Actions {
     private int maxHealthPoints;
     private WeaponStrategy weapon;
 
+    private char winFlag = 'W';
+
     protected Entity(int maxHealthPoints, int power, String name) {
         this.healthPoints = maxHealthPoints;
         this.maxHealthPoints = maxHealthPoints;
@@ -29,7 +31,7 @@ public abstract class Entity implements Actions {
     public void death() {
         Message.underLine24();
         System.out.println(name + " is dead.");
-        Message.underLine48();
+        winFlag = 'L';
     }
 
     public int getHealthPoints() {
@@ -42,6 +44,14 @@ public abstract class Entity implements Actions {
 
     public String getName() {
         return name;
+    }
+
+    public char getWinFlag() {
+        return winFlag;
+    }
+
+    public void setWinFlag(char winFlag) {
+        this.winFlag = winFlag;
     }
 
     public int headKick() {

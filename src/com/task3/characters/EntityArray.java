@@ -3,20 +3,20 @@ package com.task3.characters;
 import MyArrayList.MyArrayList;
 import com.task3.characters.actualCharacters.*;
 
-public class EntityCharacter {
-    private static EntityCharacter instance;
-    private static MyArrayList<Entity> characterArray = new MyArrayList<Entity>();
+public class EntityArray {
+    private static EntityArray instance;
+    private static final MyArrayList<Entity> characterArray = new MyArrayList<Entity>();
 
-    private EntityCharacter() {
+    private EntityArray() {
         characterArray.add(new Scorpio());
         characterArray.add(new Subzero());
         characterArray.add(new JonnyCage());
         characterArray.add(new KhabibNurmagomedov());
     }
 
-    public static EntityCharacter getInstance() {
+    public static EntityArray getInstance() {
         if (instance == null) {
-            instance = new EntityCharacter();
+            instance = new EntityArray();
         }
         return instance;
     }
