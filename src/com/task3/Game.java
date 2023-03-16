@@ -33,7 +33,7 @@ public class Game {
     }
 
 
-    private static void choosingCharacters() {
+    private static void choosingCharacters() throws IOException {
         //EntityArray.getInstance()
         Message.choosingCharacter();
         Entity playerEntity;
@@ -100,7 +100,8 @@ public class Game {
         Message.healthPointsStatus(playerEntity, machineEntity);
     }
 
-    private static void fight(Entity playerEntity, Entity machineEntity) {
+    private static void fight(Entity playerEntity, Entity machineEntity) throws IOException {
+        Logger.createFile();
         Message.fightTitle(playerEntity, machineEntity);
         while (playerEntity.getHealthPoints() > 0 && machineEntity.getHealthPoints() > 0) {
             fightMessages(playerEntity, machineEntity);
@@ -114,6 +115,7 @@ public class Game {
         }
         Message.underLine48();
         Logger.setLog(playerEntity, machineEntity);
+        Logger.writeToFile();
     }
 
     private static void win(Entity machineEntity) {

@@ -110,10 +110,10 @@ public class Stats {
     }
 
     public static void start() throws IOException {
-        Logger.writeToFile();
+        //Logger.writeToFile();
         initializer();
         dataCollector();
         print();
-        Logger.createFile();
+        //Logger.createFile();
     }
 }

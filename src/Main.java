@@ -6,10 +6,10 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         boolean continueFlag = true;
-        Logger.createFile();
+        //Logger.createFile();
         while (continueFlag) {
             continueFlag = Game.start();
         }
-        Logger.writeToFile();
+        //Logger.writeToFile();
     }
 }
