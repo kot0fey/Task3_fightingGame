@@ -2,8 +2,10 @@ package com.task3.utils;
 
 import MyHashSet.MyHashSet;
 import MyMap.MyMap;
+import com.task3.characters.Entity;
 import com.task3.characters.EntityArray;
 import com.task3.weapons.WeaponArray;
+import com.task3.weapons.WeaponStrategy;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,9 +14,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Stats {
-
+/*
     private static final MyHashSet<Object> entities = new MyHashSet<>();
     private static final MyHashSet<Object> weapons = new MyHashSet<>();
+    */
+
     private static final MyMap<String, Integer> entitiesToChoices = new MyMap<String, Integer>();
     private static final MyMap<String, Integer> weaponsToChoices = new MyMap<String, Integer>();
     private static final MyMap<String, Integer> entitiesToWins = new MyMap<String, Integer>();
@@ -34,7 +38,7 @@ public class Stats {
     }
 
     private static void initializer() {
-
+/*
         for (int i = 0; i < EntityArray.length(); i++) {
             entities.add(EntityArray.getCharacter(i).getName());
         }
@@ -43,23 +47,25 @@ public class Stats {
             weapons.add(WeaponArray.getWeapon(i).getName());
         }
 
-        for (Object o : entities) {
-            entitiesToChoices.put(o, 0);
+
+ */
+        for (Entity o : EntityArray.getCharacterArray()) {
+            entitiesToChoices.put(o.getName(), 0);
         }
-        for (Object o : weapons) {
-            weaponsToChoices.put(o, 0);
+        for (WeaponStrategy o : WeaponArray.getOriginalArray()) {
+            weaponsToChoices.put(o.getName(), 0);
         }
 
-        for (Object o : entities) {
-            entitiesToWins.put(o, 0);
+        for (Entity o : EntityArray.getCharacterArray()) {
+            entitiesToWins.put(o.getName(), 0);
         }
 
-        for (Object o : entities) {
-            entitiesToLoses.put(o, 0);
+        for (Entity o : EntityArray.getCharacterArray()) {
+            entitiesToLoses.put(o.getName(), 0);
         }
 
-        for (Object o : entities) {
-            entitiesToDraws.put(o, 0);
+        for (Entity o : EntityArray.getCharacterArray()) {
+            entitiesToDraws.put(o.getName(), 0);
         }
 
     }
@@ -99,7 +105,7 @@ public class Stats {
 
     public static void print() {
         Message.statsFavorites(getFavorite(entitiesToChoices), getFavorite(weaponsToChoices));
-        Message.statsWLD(entities, entitiesToWins, entitiesToLoses, entitiesToDraws);
+        Message.statsWLD(EntityArray.getCharacterArray(), entitiesToWins, entitiesToLoses, entitiesToDraws);
         Message.statsExit();
     }
 

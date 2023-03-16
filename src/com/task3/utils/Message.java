@@ -1,5 +1,6 @@
 package com.task3.utils;
 
+import MyArrayList.MyArrayList;
 import com.task3.characters.EntityArray;
 import com.task3.characters.Entity;
 import com.task3.weapons.WeaponArray;
@@ -115,10 +116,11 @@ public class Message {
         System.out.println("Favorite weapon: " + favoriteWeapon + "\n");
     }
 
-    public static void statsWLD(Set entities, Map entitiesToWins, Map entitiesToLoses, Map entitiesToDraws) {
+    public static void statsWLD(MyArrayList<Entity> entities, Map entitiesToWins, Map entitiesToLoses, Map entitiesToDraws) {
         System.out.println("W/L/D:");
-        for (Object entity : entities) {
-            System.out.println(entity + ": " + entitiesToWins.get(entity) + "/" + entitiesToLoses.get(entity) + "/" + entitiesToDraws.get(entity));
+        for (Entity entity : entities) {
+            String name = entity.getName();
+            System.out.println(name + ": " + entitiesToWins.get(name) + "/" + entitiesToLoses.get(name) + "/" + entitiesToDraws.get(name));
         }
         Message.underLine24();
     }

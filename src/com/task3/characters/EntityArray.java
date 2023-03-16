@@ -39,4 +39,8 @@ public class EntityArray {
         return characterArray.size();
     }
 
+    public static MyArrayList<Entity> getCharacterArray() {
+        return characterArray;
+    }
+
 }

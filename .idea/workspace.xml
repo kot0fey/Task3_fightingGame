@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab3b4ca0-f118-4fd6-8a6a-63e362c90c4e" name="Changes" comment="Added draw + added logger + added stats + logs added to gitignore">
-      <change afterPath="$PROJECT_DIR$/src/com/task3/utils/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/task3/utils/Stats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/task3/utils/CryptoHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/EntityCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/EntityArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/characters/EntityArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/characters/EntityArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/utils/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/task3/utils/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/utils/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/utils/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/utils/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/task3/weapons/WeaponArray.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678292163136</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added draw + added logger + added stats + logs added to gitignore">
+      <created>1678630835599</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1678630835599</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -22,4 +22,8 @@ public class WeaponArray {
         return originalArray.size();
     }
 
+    public static MyArrayList<WeaponStrategy> getOriginalArray() {
+        return originalArray;
+    }
+
 }

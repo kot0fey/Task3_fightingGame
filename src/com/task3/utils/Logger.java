@@ -19,10 +19,9 @@ public class Logger {
         File dir = new File("logs");
         Date date = new Date();
         String actualDate = date.toString().replace(':', '_');
-        int hashCode = date.hashCode();
 
         dir.mkdir();
-        return new File(dir, actualDate + "_" + hashCode);
+        return new File(dir, actualDate + "_" + CryptoHelper.md5Custom(String.valueOf(date)) + ".txt");
     }
 
     public static void setLog(Entity playerEntity, Entity machineEntity) {
